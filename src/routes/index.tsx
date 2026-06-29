@@ -33,12 +33,18 @@ function Home() {
   return (
     <div
       ref={containerRef}
-      className="min-h-[100dvh] bg-(--color-surface) text-(--color-text-primary) flex flex-col justify-between px-6 md:px-16 lg:px-24 overflow-x-hidden"
+      className="relative min-h-[100dvh] bg-(--color-surface) text-(--color-text-primary) flex flex-col justify-between px-6 md:px-16 lg:px-24 overflow-x-hidden"
     >
-      <div className="pt-12 flex items-center gap-3" data-animate>
+      <svg className="pointer-events-none fixed inset-0 z-50 h-full w-full opacity-[0.05]" aria-hidden="true">
+        <filter id="grain">
+          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#grain)" />
+      </svg>
+      <a href="/" className="pt-12 flex items-center gap-3 no-underline text-inherit" data-animate>
         <img src="/logos/favicon/favicon.svg" alt="Polimath Labs" className="h-8 w-8" />
         <span className="text-lg font-medium tracking-tight">Polimath Labs</span>
-      </div>
+      </a>
 
       <div className="flex flex-col md:flex-row md:items-start justify-between gap-16 py-16 w-full">
         <main className="md:w-1/2">
@@ -66,7 +72,7 @@ function Home() {
             </a>
             , a loan management platform for microfinance organizations. It
             handles the full lifecycle: client onboarding, disbursement, repayment tracking, and
-            compliance.
+            reporting.
           </p>
         </main>
 
