@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Geist Pixel";
+  src: url("/fonts/GeistPixel-Square.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Sans";
+  src: url("/fonts/Geist-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@theme {
+  --font-pixel: "Geist Pixel", monospace;
+  --font-sans: "Geist Sans", system-ui, sans-serif;
+
+  --color-surface: #0a0a0a;
+  --color-text-primary: #f0f0f0;
+  --color-text-muted: #888888;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-pixel);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not(.dark) {
+    --color-surface: #f0f0f0;
+    --color-text-primary: #0a0a0a;
+    --color-text-muted: #666666;
+  }
+}
+
+.light {
+  --color-surface: #f0f0f0;
+  --color-text-primary: #0a0a0a;
+  --color-text-muted: #666666;
+}
