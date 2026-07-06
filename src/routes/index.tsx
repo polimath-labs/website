@@ -78,11 +78,11 @@ function Home() {
 
         <aside className="hidden md:flex flex-col gap-6 text-sm text-(--color-text-muted) ml-auto">
           <div data-animate-right>
-            <p className="text-(--color-text-primary) font-medium mb-1">Based in</p>
+            <p className="text-(--color-text-primary) font-bold mb-1">Based in</p>
             <p className="leading-relaxed">Kigali, Rwanda</p>
           </div>
           <div data-animate-right>
-            <p className="text-(--color-text-primary) font-medium mb-1">Current</p>
+            <p className="text-(--color-text-primary) font-bold mb-1">Projects</p>
             <a
               href="https://loanstack.polimath.dev/"
               target="_blank"
@@ -93,12 +93,12 @@ function Home() {
             </a>
           </div>
           <div data-animate-right>
-            <p className="text-(--color-text-primary) font-medium mb-1">Contact</p>
+            <p className="text-(--color-text-primary) font-bold mb-1">Contact</p>
             <a
-              href="mailto:hello@polimath.dev"
+              href="mailto:team@polimath.dev"
               className="leading-relaxed hover:text-(--color-text-primary) transition-colors duration-300"
             >
-              hello@polimath.dev
+              team@polimath.dev
             </a>
           </div>
         </aside>
