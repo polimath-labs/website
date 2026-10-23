@@ -52,3 +52,32 @@ body {
   --color-text-primary: #0a0a0a;
   --color-text-muted: #666666;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-animate] {
+    animation: enter-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+
+  main > [data-animate]:nth-child(1) { animation-delay: 0.12s; }
+  main > [data-animate]:nth-child(2) { animation-delay: 0.24s; }
+  main > [data-animate]:nth-child(3) { animation-delay: 0.36s; }
+  main > [data-animate]:nth-child(4) { animation-delay: 0.48s; }
+  footer[data-animate] { animation-delay: 0.6s; }
+
+  [data-animate-right] {
+    animation: enter-right 1s cubic-bezier(0.22, 1, 0.36, 1) 0.4s backwards;
+  }
+
+  [data-animate-right]:nth-child(2) { animation-delay: 0.55s; }
+  [data-animate-right]:nth-child(3) { animation-delay: 0.7s; }
+}
+
+@keyframes enter-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes enter-right {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}

@@ -1,38 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { useRef } from 'react'
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
 
 export const Route = createFileRoute('/')({ component: Home })
 
 function Home() {
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  useGSAP(
-    () => {
-      gsap.from('[data-animate]', {
-        y: 20,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        stagger: 0.12,
-      })
-
-      gsap.from('[data-animate-right]', {
-        x: 30,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: 0.15,
-        delay: 0.4,
-      })
-    },
-    { scope: containerRef },
-  )
-
   return (
     <div
-      ref={containerRef}
       className="relative min-h-[100dvh] bg-(--color-surface) text-(--color-text-primary) flex flex-col justify-between px-6 md:px-16 lg:px-24 overflow-x-hidden"
     >
       <svg className="pointer-events-none fixed inset-0 z-50 h-full w-full opacity-[0.05]" aria-hidden="true">
@@ -50,9 +22,7 @@ function Home() {
         <main className="md:w-1/2">
           <p data-animate className="text-lg md:text-xl leading-relaxed text-(--color-text-muted)">
             <span className="text-(--color-text-primary) font-medium">Polimath Labs</span> is
-            a technology company focused on building useful tools and developing deep technical
-            competence.
-          </p>
+            a tech team focused on building useful tools and developing deep technical competence. </p>
 
           <p data-animate className="mt-6 text-lg md:text-xl leading-relaxed text-(--color-text-muted)">
             We build on the web and study how things underneath it work.
@@ -63,15 +33,15 @@ function Home() {
           <p data-animate className="mt-6 text-lg md:text-xl leading-relaxed text-(--color-text-muted)">
             Right now we're building{' '}
             <a
-              href="https://loanstack.polimath.dev/"
+              href="https://loanstack.org/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-(--color-text-primary) underline underline-offset-4 decoration-(--color-text-muted)/40 hover:decoration-(--color-text-primary) transition-colors duration-300"
             >
               Loanstack
             </a>
-            , a loan management platform for microfinance organizations. It
-            handles the full lifecycle: client onboarding, disbursement, repayment tracking, and
+            ; a loan management platform for microfinance organizations. It handles the full lifecycle:
+            client onboarding, disbursement, repayment tracking, and
             reporting.
           </p>
         </main>
@@ -84,12 +54,20 @@ function Home() {
           <div data-animate-right>
             <p className="text-(--color-text-primary) font-bold mb-1">Projects</p>
             <a
-              href="https://loanstack.polimath.dev/"
+              href="https://loanstack.org/"
               target="_blank"
               rel="noopener noreferrer"
               className="leading-relaxed hover:text-(--color-text-primary) transition-colors duration-300"
             >
               Loanstack
+            </a>
+            <a
+              href="https://github.com/polimath-labs/redline"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block leading-relaxed hover:text-(--color-text-primary) transition-colors duration-300"
+            >
+              Redline
             </a>
           </div>
           <div data-animate-right>
